@@ -32,6 +32,6 @@ while IFS= read -r line; do
 	# Remove the domain read permission. 
 			$gam user $1 delete drivefileacl $line id:$permid;
 	fi
-	# Take a short break to avoid hitting G Suite API quotas. 
+	# Sleep for a bit to avoid hitting G Suite API quota limits. 
 	sleep 0.1
 done < sharelist_$1.txt
